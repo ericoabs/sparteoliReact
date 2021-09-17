@@ -1,21 +1,19 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-/* This example requires Tailwind CSS v2.0+ */
 import { Disclosure } from '@headlessui/react'
 import { CalendarIcon, ChartBarIcon, FolderIcon, HomeIcon, InboxIcon, UsersIcon, ClipboardListIcon } from '@heroicons/react/outline'
 import logo from '../../assets/logo-insignia.png';
 
-const navigation = [
+export const navigation = [
   { name: 'Dashboard', icon: HomeIcon, current: true, href: '#' },
   {
     name: 'Ocorrências',
     icon: ClipboardListIcon,
     current: false,
-    // children: [
-    //   { name: 'Overview', href: '#' },
-    //   { name: 'Members', href: '#' },
-    //   { name: 'Calendar', href: '#' },
-    //   { name: 'Settings', href: '#' },
-    // ],
+    children: [
+      { name: 'Nova Ocorrência', href: '#' },
+      { name: 'Listar Ocorrência', href: '#' },
+    ],
   },
   {
     name: 'Projects',
@@ -74,7 +72,7 @@ export default function Sidebar() {
         <img
           className="h-8 w-auto mr-2"
           src={logo}
-          alt="Workflow"
+          alt="Sparteoli Logo"
         />
         <p>Sparteoli</p>
       </div>
