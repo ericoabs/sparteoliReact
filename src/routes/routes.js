@@ -1,10 +1,10 @@
-import { Route, Switch } from "react-router"
-import Dashboard from "../pages/Dashboard"
+import { Route, Switch } from 'react-router';
+import Dashboard from '../pages/Dashboard';
 
 export const Routes = () => {
-    return (
-        <Switch>
-            <Route path="/" component={Dashboard} />
-        </Switch>
-    )
-}
+  return (
+    <Switch>
+      <Route path="/" component={Dashboard} />
+    </Switch>
+  );
+};

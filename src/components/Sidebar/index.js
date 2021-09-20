@@ -1,7 +1,14 @@
 /* eslint-disable no-unused-vars */
-/* eslint-disable jsx-a11y/anchor-is-valid */
-import { Disclosure } from '@headlessui/react'
-import { CalendarIcon, ChartBarIcon, FolderIcon, HomeIcon, InboxIcon, UsersIcon, ClipboardListIcon } from '@heroicons/react/outline'
+import { Disclosure } from '@headlessui/react';
+import {
+  CalendarIcon,
+  ChartBarIcon,
+  FolderIcon,
+  HomeIcon,
+  InboxIcon,
+  UsersIcon,
+  ClipboardListIcon,
+} from '@heroicons/react/outline';
 import logo from '../../assets/logo-insignia.png';
 
 export const navigation = [
@@ -12,7 +19,7 @@ export const navigation = [
     current: false,
     children: [
       { name: 'Nova Ocorrência', href: '#' },
-      { name: 'Listar Ocorrência', href: '#', },
+      { name: 'Listar Ocorrência', href: '#' },
     ],
   },
   {
@@ -59,21 +66,17 @@ export const navigation = [
   //     { name: 'Settings', href: '#' },
   //   ],
   // },
-]
+];
 
 function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(' ');
 }
 
 export default function Sidebar() {
   return (
     <div className="flex flex-col flex-grow border-r border-gray-200 pt-5 pb-4 bg-gray-700 overflow-y-auto">
       <div className="flex items-center flex-shrink-0 px-4 text-white">
-        <img
-          className="h-8 w-auto mr-2"
-          src={logo}
-          alt="Sparteoli Logo"
-        />
+        <img className="h-8 w-auto mr-2" src={logo} alt="Sparteoli Logo" />
         <p>Sparteoli</p>
       </div>
       <div className="mt-5 flex-grow flex flex-col">
@@ -87,13 +90,15 @@ export default function Sidebar() {
                     item.current
                       ? 'bg-gray-600 text-white'
                       : 'bg-gray-700 text-white hover:bg-gray-500 hover:text-white',
-                    'group w-full flex items-center pl-2 py-2 text-sm font-medium rounded-md'
+                    'group w-full flex items-center pl-2 py-2 text-sm font-medium rounded-md',
                   )}
                 >
                   <item.icon
                     className={classNames(
-                      item.current ? 'text-white' : 'text-gray-200 group-hover:text-gray-200',
-                      'mr-3 flex-shrink-0 h-6 w-6'
+                      item.current
+                        ? 'text-white'
+                        : 'text-gray-200 group-hover:text-gray-200',
+                      'mr-3 flex-shrink-0 h-6 w-6',
                     )}
                     aria-hidden="true"
                   />
@@ -109,7 +114,7 @@ export default function Sidebar() {
                         item.current
                           ? 'bg-black text-gray-900'
                           : 'bg-gray-700 text-white hover:bg-gray-500 hover:text-white',
-                        'group w-full flex items-center pl-2 pr-1 py-2 text-left text-sm font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500'
+                        'group w-full flex items-center pl-2 pr-1 py-2 text-left text-sm font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500',
                       )}
                     >
                       <item.icon
@@ -120,7 +125,7 @@ export default function Sidebar() {
                       <svg
                         className={classNames(
                           open ? 'text-gray-400 rotate-90' : 'text-gray-300',
-                          'ml-3 flex-shrink-0 h-5 w-5 transform group-hover:text-gray-400 transition-colors ease-in-out duration-150'
+                          'ml-3 flex-shrink-0 h-5 w-5 transform group-hover:text-gray-400 transition-colors ease-in-out duration-150',
                         )}
                         viewBox="0 0 20 20"
                         aria-hidden="true"
@@ -142,10 +147,10 @@ export default function Sidebar() {
                   </>
                 )}
               </Disclosure>
-            )
+            ),
           )}
         </nav>
       </div>
     </div>
-  )
+  );
 }
