@@ -14,9 +14,10 @@ import {
 } from '@heroicons/react/outline'
 import { SearchIcon } from '@heroicons/react/solid'
 import Sidebar from '../components/Sidebar'
-import { navigation } from '../components/Sidebar'
 import logo from '../assets/logo-insignia.png';
 import DashboardContent from '../components/DashboardContent'
+
+import { navigation } from '../components/Sidebar'
 
 // const navigation = [
 //   { name: 'Dashboard', href: '#', icon: HomeIcon, current: true },

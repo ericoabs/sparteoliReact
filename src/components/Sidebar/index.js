@@ -12,7 +12,7 @@ export const navigation = [
     current: false,
     children: [
       { name: 'Nova Ocorrência', href: '#' },
-      { name: 'Listar Ocorrência', href: '#' },
+      { name: 'Listar Ocorrência', href: '#', },
     ],
   },
   {
