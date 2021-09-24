@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { Fragment, useState } from 'react';
+import { Fragment, useCallback, useMemo, useState } from 'react';
 import { Dialog, Menu, Transition } from '@headlessui/react';
 import {
   BellIcon,
@@ -19,6 +19,11 @@ import DashboardContent from '../components/DashboardContent';
 
 import { navigation } from '../components/Sidebar';
 import OccurenceList from '../components/OccurrenceList';
+import CallAndAdress from '../components/Steps/CallAndAdress';
+import StepsBar from '../components/StepsBar';
+import LocationAndDetails from '../components/Steps/LocationAndDetails';
+import FillerAndOperation from '../components/Steps/FillerAndOperation';
+import Button from '../components/Button';
 
 // const navigation = [
 //   { name: 'Dashboard', href: '#', icon: HomeIcon, current: true },
@@ -40,6 +45,55 @@ function classNames(...classes) {
 
 export default function Dashboard() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [steps, setSteps] = useState([
+    { id: '01', name: 'Chamado', href: '#', status: 'complete' },
+    { id: '02', name: 'Solicitante / Resumo', href: '#', status: 'current' },
+    { id: '03', name: 'Local', href: '#', status: 'upcoming' },
+    // { id: '04', name: 'Preenchedor', href: '#', status: 'upcoming' },
+    // { id: '06', name: 'Operação', href: '#', status: 'upcoming' },
+    // { id: '07', name: 'Local', href: '#', status: 'upcoming' },
+  ]);
+
+  const currentStep = useMemo(() => {
+    const [currentStep] = steps.filter((step) => {
+      if (step.status === 'current') return step;
+    });
+    console.log(currentStep);
+    return currentStep;
+  }, [steps]);
+
+  const stepsTotal = useMemo(() => steps.length + 1, [steps]);
+
+  const renderStep = useCallback(() => {
+    return (
+      <>
+        {currentStep.id == '01' && <CallAndAdress />}
+        {currentStep.id == '02' && <LocationAndDetails />}
+        {currentStep.id == '03' && <FillerAndOperation />}
+      </>
+    );
+  }, [currentStep]);
+
+  const handleNextStep = useCallback(() => {
+    const newSteps = steps.map((step, index) => {
+      console.log(step);
+      if (step.id === currentStep.id) {
+        return { ...step, status: 'complete' };
+      }
+
+      if (index === steps.length) {
+        return step;
+      }
+
+      if (step.id === currentStep.id) {
+        return step;
+      }
+    });
+
+    // const newSteps = steps.filter()
+
+    setSteps(newSteps);
+  }, [steps, currentStep]);
 
   return (
     <div className="h-screen flex overflow-hidden bg-gray-100">
@@ -225,8 +279,17 @@ export default function Dashboard() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
               {/* Replace with your content */}
               <div className="py-4">
-                {/* <DashboardContent /> */}
-                <OccurenceList />
+                <StepsBar steps={steps} />
+                {renderStep()}
+                {/* <DashboardContent />
+                <OccurenceList /> */}
+                {/* <CallAndAdress />
+                <LocationAndDetails />
+                <FillerAndOperation /> */}
+              </div>
+              <div className="flex justify-between my-4">
+                <Button name="Retornar" />
+                <Button name="Prosseguir" onClick={handleNextStep} />
               </div>
               {/* /End replace */}
             </div>
