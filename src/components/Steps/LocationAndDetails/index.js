@@ -3,14 +3,11 @@ import Button from '../../Button';
 export default function LocationAndDetails() {
   return (
     <>
-      <h1 className="text-xl font-bold my-4">Data e Chamado</h1>
+      <h1 className="text-xl font-bold my-4">Resumo</h1>
       <div className="grid grid-cols-1">
         <div>
-          <label
-            htmlFor="email"
-            className="block text-sm font-medium text-gray-700"
-          >
-            CEP:
+          <label htmlFor="details" className="text-lg font-semi-bold">
+            Detalhes da ocorrência:
           </label>
           <div className="mt-1">
             <textarea
@@ -26,10 +23,7 @@ export default function LocationAndDetails() {
       <h1 className="text-xl font-bold my-4">Local</h1>
       <div className="grid grid-cols-2 gap-4">
         <div>
-          <label
-            htmlFor="email"
-            className="block text-sm font-medium text-gray-700"
-          >
+          <label htmlFor="details" className="text-lg font-semi-bold">
             Caracteristicas do local:
           </label>
           <div className="mt-1">
@@ -43,10 +37,7 @@ export default function LocationAndDetails() {
           </div>
         </div>
         <div>
-          <label
-            htmlFor="email"
-            className="block text-sm font-medium text-gray-700"
-          >
+          <label htmlFor="details" className="text-lg font-semi-bold">
             Uso do local:
           </label>
           <div className="mt-1">
@@ -60,10 +51,7 @@ export default function LocationAndDetails() {
           </div>
         </div>
         <div>
-          <label
-            htmlFor="email"
-            className="block text-sm font-medium text-gray-700"
-          >
+          <label htmlFor="details" className="text-lg font-semi-bold">
             É local de preservação:
           </label>
           <div className="mt-1">

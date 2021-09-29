@@ -3,7 +3,7 @@ import Button from '../../Button';
 export default function CallAndAdress() {
   return (
     <>
-      <h1 className="text-xl font-bold mb-4">Data e Chamado</h1>
+      <h1 className="text-xl font-bold my-4">Data e Chamado</h1>
       <div className="grid grid-cols-4 gap-4">
         <div>
           <div>
@@ -11,7 +11,8 @@ export default function CallAndAdress() {
               Data:
               <input
                 type="date"
-                name="bday"
+                name="callDate"
+                dataMask="00/00/0000"
                 required
                 maxLength="8"
                 className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
@@ -23,8 +24,8 @@ export default function CallAndAdress() {
           <h2 className="text-lg font-semi-bold">Horário do chamado:</h2>
           <input
             type="time"
-            name="time"
-            id="time"
+            name="timeOfCall"
+            id="timeOfCall"
             className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
           />
         </div>
@@ -32,8 +33,8 @@ export default function CallAndAdress() {
           <h2 className="text-lg font-semi-bold">Horário da chegada</h2>
           <input
             type="time"
-            name="time"
-            id="time"
+            name="arrivalTime"
+            id="arrivalTime"
             className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
           />
         </div>
@@ -41,8 +42,8 @@ export default function CallAndAdress() {
           <h2 className="text-lg font-semi-bold">Horário do encerramento</h2>
           <input
             type="time"
-            name="time"
-            id="time"
+            name="endingTime"
+            id="endingTime"
             className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
           />
         </div>
@@ -51,8 +52,8 @@ export default function CallAndAdress() {
             Meio de chamado utilizado:
           </label>
           <select
-            id="location"
-            name="location"
+            id="contactMethod"
+            name="contactMethod"
             className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
             defaultValue="default"
           >
@@ -64,107 +65,89 @@ export default function CallAndAdress() {
           </select>
         </div>
       </div>
-      <h1 className="my-5">Endereço</h1>
+      <h1 className="text-xl font-bold my-4">Endereço</h1>
       <div className="grid grid-cols-4 gap-4">
         <div>
-          <label
-            htmlFor="email"
-            className="block text-sm font-medium text-gray-700"
-          >
+          <label htmlFor="CEP" className="text-lg font-semi-bold">
             CEP:
           </label>
           <div className="mt-1">
             <input
               type="text"
-              name="email"
-              id="email"
+              name="CEP"
+              id="CEP"
               className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-              placeholder="you@example.com"
+              placeholder="CEP"
             />
           </div>
         </div>
         <div>
-          <label
-            htmlFor="email"
-            className="block text-sm font-medium text-gray-700"
-          >
+          <label htmlFor="street" className="text-lg font-semi-bold">
             Rua:
           </label>
           <div className="mt-1">
             <input
               type="text"
-              name="email"
-              id="email"
+              name="street"
+              id="street"
               className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-              placeholder="you@example.com"
+              placeholder="Nome da rua"
             />
           </div>
         </div>
         <div>
-          <label
-            htmlFor="email"
-            className="block text-sm font-medium text-gray-700"
-          >
+          <label htmlFor="houseNumber" className="text-lg font-semi-bold">
             Número:
           </label>
           <div className="mt-1">
             <input
               type="text"
-              name="email"
-              id="email"
+              name="houseNumber"
+              id="houseNumber"
               className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-              placeholder="you@example.com"
+              placeholder="Número do local"
             />
           </div>
         </div>
         <div>
-          <label
-            htmlFor="email"
-            className="block text-sm font-medium text-gray-700"
-          >
+          <label htmlFor="neighborhood" className="text-lg font-semi-bold">
             Bairro:
           </label>
           <div className="mt-1">
             <input
               type="text"
-              name="email"
-              id="email"
+              name="neighborhood"
+              id="neighborhood"
               className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-              placeholder="you@example.com"
+              placeholder="Bairro"
             />
           </div>
         </div>
         <div>
-          <label
-            htmlFor="email"
-            className="block text-sm font-medium text-gray-700"
-          >
+          <label htmlFor="city" className="text-lg font-semi-bold">
             Cidade:
           </label>
           <div className="mt-1">
             <input
               type="text"
-              name="email"
-              id="email"
+              name="city"
+              id="city"
               className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-              placeholder="you@example.com"
+              placeholder="Cidade"
             />
           </div>
         </div>
         <div>
-          <label
-            htmlFor="email"
-            className="block text-sm font-medium text-gray-700"
-          >
+          <label htmlFor="state" className="text-lg font-semi-bold">
             Estado:
           </label>
           <div className="mt-1">
             <input
               type="text"
-              name="email"
-              id="email"
+              name="state"
+              id="state"
               className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-              placeholder="you@example.com"
+              placeholder="Estado"
             />
           </div>
         </div>
@@ -172,36 +155,32 @@ export default function CallAndAdress() {
       <h1 className="text-xl font-bold my-4">Solicitante</h1>
       <div className="grid grid-cols-2 gap-4">
         <div>
-          <label
-            htmlFor="email"
-            className="block text-sm font-medium text-gray-700"
-          >
+          <label htmlFor="name" className="text-lg font-semi-bold">
             Nome:
           </label>
           <div className="mt-1">
             <input
               type="text"
-              name="email"
-              id="email"
+              name="callerName"
+              id="callerName"
               className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-              placeholder="you@example.com"
+              placeholder="Nome do solicitante"
             />
           </div>
         </div>
         <div>
-          <label
-            htmlFor="email"
-            className="block text-sm font-medium text-gray-700"
-          >
+          <label htmlFor="phone" className="text-lg font-semi-bold">
             Telefone:
           </label>
           <div className="mt-1">
             <input
-              type="text"
-              name="email"
-              id="email"
+              type="tel"
+              name="phone"
+              id="phone"
+              pattern="[0-9]{2}-[0-9]{5}-[0-9]{4}"
+              required
               className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-              placeholder="you@example.com"
+              placeholder="Telefone do solicitante"
             />
           </div>
         </div>

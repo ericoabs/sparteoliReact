@@ -46,9 +46,9 @@ function classNames(...classes) {
 export default function Dashboard() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [steps, setSteps] = useState([
-    { id: '01', name: 'Chamado', href: '#', status: 'complete' },
-    { id: '02', name: 'Solicitante / Resumo', href: '#', status: 'current' },
-    { id: '03', name: 'Local', href: '#', status: 'upcoming' },
+    { id: 1, name: 'Chamado', href: '#', status: 'current' },
+    { id: 2, name: 'Solicitante / Resumo', href: '#', status: 'upcoming' },
+    { id: 3, name: 'Local', href: '#', status: 'upcoming' },
     // { id: '04', name: 'Preenchedor', href: '#', status: 'upcoming' },
     // { id: '06', name: 'Operação', href: '#', status: 'upcoming' },
     // { id: '07', name: 'Local', href: '#', status: 'upcoming' },
@@ -58,7 +58,6 @@ export default function Dashboard() {
     const [currentStep] = steps.filter((step) => {
       if (step.status === 'current') return step;
     });
-    console.log(currentStep);
     return currentStep;
   }, [steps]);
 
@@ -67,30 +66,25 @@ export default function Dashboard() {
   const renderStep = useCallback(() => {
     return (
       <>
-        {currentStep.id == '01' && <CallAndAdress />}
-        {currentStep.id == '02' && <LocationAndDetails />}
-        {currentStep.id == '03' && <FillerAndOperation />}
+        {currentStep.id === 1 && <CallAndAdress />}
+        {currentStep.id === 2 && <LocationAndDetails />}
+        {currentStep.id === 3 && <FillerAndOperation />}
       </>
     );
   }, [currentStep]);
 
   const handleNextStep = useCallback(() => {
     const newSteps = steps.map((step, index) => {
-      console.log(step);
       if (step.id === currentStep.id) {
         return { ...step, status: 'complete' };
       }
 
-      if (index === steps.length) {
-        return step;
+      if (currentStep.id === index) {
+        return { ...step, status: 'current' };
       }
 
-      if (step.id === currentStep.id) {
-        return step;
-      }
+      return step;
     });
-
-    // const newSteps = steps.filter()
 
     setSteps(newSteps);
   }, [steps, currentStep]);
