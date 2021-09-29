@@ -298,7 +298,11 @@ export default function Dashboard() {
                 <FillerAndOperation /> */}
               </div>
               <div className="flex justify-between my-4">
-                <Button name="Retornar" onClick={handleReturnStep} />
+                {currentStep.id !== 1 ? (
+                  <Button name="Retornar" onClick={handleReturnStep} />
+                ) : (
+                  <div />
+                )}
                 <Button name="Prosseguir" onClick={handleNextStep} />
               </div>
               {/* /End replace */}
