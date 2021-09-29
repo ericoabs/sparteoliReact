@@ -89,6 +89,22 @@ export default function Dashboard() {
     setSteps(newSteps);
   }, [steps, currentStep]);
 
+  const handleReturnStep = useCallback(() => {
+    const newSteps = steps.map((step) => {
+      if (step.id === currentStep.id) {
+        return { ...step, status: 'upcoming' };
+      }
+
+      if (step.id === currentStep.id - 1) {
+        return { ...step, status: 'current' };
+      }
+
+      return step;
+    });
+
+    setSteps(newSteps);
+  }, [steps, currentStep]);
+
   return (
     <div className="h-screen flex overflow-hidden bg-gray-100">
       <Transition.Root show={sidebarOpen} as={Fragment}>
@@ -282,7 +298,7 @@ export default function Dashboard() {
                 <FillerAndOperation /> */}
               </div>
               <div className="flex justify-between my-4">
-                <Button name="Retornar" />
+                <Button name="Retornar" onClick={handleReturnStep} />
                 <Button name="Prosseguir" onClick={handleNextStep} />
               </div>
               {/* /End replace */}
