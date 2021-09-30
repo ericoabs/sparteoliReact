@@ -61,7 +61,12 @@ export default function Dashboard() {
     return currentStep;
   }, [steps]);
 
-  const stepsTotal = useMemo(() => steps.length + 1, [steps]);
+  const stepsTotal = useMemo(() => steps.length, [steps]);
+
+  const lastStep = useMemo(
+    () => currentStep.id === steps.length,
+    [currentStep.id, steps],
+  );
 
   const renderStep = useCallback(() => {
     return (
@@ -104,6 +109,10 @@ export default function Dashboard() {
 
     setSteps(newSteps);
   }, [steps, currentStep]);
+
+  const handleFinish = useCallback(() => {
+    console.log('acabou');
+  }, []);
 
   return (
     <div className="h-screen flex overflow-hidden bg-gray-100">
@@ -303,7 +312,10 @@ export default function Dashboard() {
                 ) : (
                   <div />
                 )}
-                <Button name="Prosseguir" onClick={handleNextStep} />
+                <Button
+                  name={lastStep ? 'Finalizar' : 'Prosseguir'}
+                  onClick={lastStep ? handleFinish : handleNextStep}
+                />
               </div>
               {/* /End replace */}
             </div>
