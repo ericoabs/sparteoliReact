@@ -14,8 +14,8 @@ export default function LocationAndDetails() {
               type="text-area"
               name="email"
               id="email"
-              className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md h-80"
-              placeholder="you@example.com"
+              className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md h-28"
+              placeholder="Detalhes da ocorrência"
             ></textarea>
           </div>
         </div>
