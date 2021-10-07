@@ -15,10 +15,10 @@ export default function FillerAndOperation() {
           <div className="mt-1">
             <input
               type="text"
-              name="email"
-              id="email"
+              name="preenchedor"
+              id="preenchedor"
               className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-              placeholder="you@example.com"
+              placeholder="Nome do preenchedor"
             />
           </div>
         </div>
@@ -32,10 +32,10 @@ export default function FillerAndOperation() {
           <div className="mt-1">
             <input
               type="text"
-              name="email"
-              id="email"
+              name="register"
+              id="register"
               className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-              placeholder="you@example.com"
+              placeholder=""
             />
           </div>
         </div>
@@ -49,10 +49,10 @@ export default function FillerAndOperation() {
           <div className="mt-1">
             <input
               type="text"
-              name="email"
-              id="email"
+              name="patente"
+              id="patente"
               className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-              placeholder="you@example.com"
+              placeholder=""
             />
           </div>
         </div>
@@ -69,10 +69,10 @@ export default function FillerAndOperation() {
           <div className="mt-1">
             <input
               type="text"
-              name="email"
-              id="email"
+              name="nomeDoSolicitante"
+              id="nomeDoSolicitante"
               className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-              placeholder="you@example.com"
+              placeholder="Nome do Solicitante"
             />
           </div>
         </div>
@@ -86,10 +86,10 @@ export default function FillerAndOperation() {
           <div className="mt-1">
             <input
               type="text"
-              name="email"
-              id="email"
+              name="telefoneDoSolicitante"
+              id="telefoneDoSolicitante"
               className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-              placeholder="you@example.com"
+              placeholder="Telefone do Solicitante"
             />
           </div>
         </div>

@@ -1,4 +1,5 @@
 import Button from '../../Button';
+import ReactInputDateMask from 'react-input-date-mask';
 
 export default function CallAndAdress() {
   return (
@@ -12,11 +13,15 @@ export default function CallAndAdress() {
               <input
                 type="date"
                 name="callDate"
-                dataMask="00/00/0000"
                 required
-                maxLength="8"
                 className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
               />
+              {/* <ReactInputDateMask
+                mask="dd/mm/yyyy"
+                showMaskOnFocus={true}
+                className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
+                showMaskOnHover={true}
+              /> */}
             </label>
           </div>
         </div>

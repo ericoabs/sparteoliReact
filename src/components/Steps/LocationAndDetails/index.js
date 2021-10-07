@@ -12,8 +12,8 @@ export default function LocationAndDetails() {
           <div className="mt-1">
             <textarea
               type="text-area"
-              name="email"
-              id="email"
+              name="details"
+              id="details"
               className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md h-28"
               placeholder="Detalhes da ocorrência"
             ></textarea>
@@ -23,16 +23,16 @@ export default function LocationAndDetails() {
       <h1 className="text-xl font-bold my-4">Local</h1>
       <div className="grid grid-cols-2 gap-4">
         <div>
-          <label htmlFor="details" className="text-lg font-semi-bold">
+          <label htmlFor="local" className="text-lg font-semi-bold">
             Caracteristicas do local:
           </label>
           <div className="mt-1">
             <input
               type="text"
-              name="email"
-              id="email"
+              name="local"
+              id="local"
               className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-              placeholder="you@example.com"
+              placeholder=""
             />
           </div>
         </div>
@@ -43,10 +43,10 @@ export default function LocationAndDetails() {
           <div className="mt-1">
             <input
               type="text"
-              name="email"
-              id="email"
+              name="localUse"
+              id="localUse"
               className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-              placeholder="you@example.com"
+              placeholder=""
             />
           </div>
         </div>
@@ -57,10 +57,10 @@ export default function LocationAndDetails() {
           <div className="mt-1">
             <input
               type="text"
-              name="email"
-              id="email"
+              name="preservationLocation"
+              id="preservationLocation"
               className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-              placeholder="you@example.com"
+              placeholder=""
             />
           </div>
         </div>
