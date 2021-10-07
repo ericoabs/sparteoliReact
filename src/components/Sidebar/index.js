@@ -9,6 +9,7 @@ import {
   UsersIcon,
   ClipboardListIcon,
 } from '@heroicons/react/outline';
+import { Link } from 'react-router-dom';
 import logo from '../../assets/logo-insignia.png';
 
 export const navigation = [
@@ -18,8 +19,8 @@ export const navigation = [
     icon: ClipboardListIcon,
     current: false,
     children: [
-      { name: 'Nova Ocorrência', href: '#' },
-      { name: 'Listar Ocorrência', href: '#' },
+      { name: 'Nova Ocorrência', href: '/newoccurrence' },
+      { name: 'Listar Ocorrência', href: '/occurencelist' },
     ],
   },
   {
@@ -84,8 +85,8 @@ export default function Sidebar() {
           {navigation.map((item) =>
             !item.children ? (
               <div key={item.name}>
-                <a
-                  href="#"
+                <Link
+                  to={item.href}
                   className={classNames(
                     item.current
                       ? 'bg-gray-600 text-white'
@@ -93,6 +94,15 @@ export default function Sidebar() {
                     'group w-full flex items-center pl-2 py-2 text-sm font-medium rounded-md',
                   )}
                 >
+                  {/* <a
+                  href="#"
+                  className={classNames(
+                    item.current
+                      ? 'bg-gray-600 text-white'
+                      : 'bg-gray-700 text-white hover:bg-gray-500 hover:text-white',
+                    'group w-full flex items-center pl-2 py-2 text-sm font-medium rounded-md',
+                  )}
+                > */}
                   <item.icon
                     className={classNames(
                       item.current
@@ -103,7 +113,8 @@ export default function Sidebar() {
                     aria-hidden="true"
                   />
                   {item.name}
-                </a>
+                  {/* </a> */}
+                </Link>
               </div>
             ) : (
               <Disclosure as="div" key={item.name} className="space-y-1">

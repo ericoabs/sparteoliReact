@@ -13,37 +13,23 @@ import {
   XIcon,
 } from '@heroicons/react/outline';
 import { SearchIcon } from '@heroicons/react/solid';
-import Sidebar from '../components/Sidebar';
-import logo from '../assets/logo-insignia.png';
-import DashboardContent from '../components/DashboardContent';
+import Sidebar from '../Sidebar';
+import logo from '../../assets/logo-insignia.png';
+import DashboardContent from '../DashboardContent';
 
-import { navigation } from '../components/Sidebar';
-import OccurenceList from '../components/OccurrenceList';
-import CallAndAdress from '../components/Steps/CallAndAdress';
-import StepsBar from '../components/StepsBar';
-import LocationAndDetails from '../components/Steps/LocationAndDetails';
-import FillerAndOperation from '../components/Steps/FillerAndOperation';
-import Button from '../components/Button';
-
-// const navigation = [
-//   { name: 'Dashboard', href: '#', icon: HomeIcon, current: true },
-//   { name: 'Team', href: '#', icon: UsersIcon, current: false },
-//   { name: 'Projects', href: '#', icon: FolderIcon, current: false },
-//   { name: 'Calendar', href: '#', icon: CalendarIcon, current: false },
-//   { name: 'Documents', href: '#', icon: InboxIcon, current: false },
-//   { name: 'Reports', href: '#', icon: ChartBarIcon, current: false },
-// ]
-// const userNavigation = [
-//   { name: 'Your Profile', href: '#' },
-//   { name: 'Settings', href: '#' },
-//   { name: 'Sign out', href: '#' },
-// ]
+import { navigation } from '../Sidebar';
+import OccurenceList from '../OccurrenceList';
+import CallAndAdress from '../Steps/CallAndAdress';
+import StepsBar from '../StepsBar';
+import LocationAndDetails from '../Steps/LocationAndDetails';
+import FillerAndOperation from '../Steps/FillerAndOperation';
+import Button from '../Button';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
 }
 
-export default function Dashboard() {
+export default function NewOccurrence() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [steps, setSteps] = useState([
     { id: 1, name: 'Chamado', href: '#', status: 'current' },
@@ -306,7 +292,7 @@ export default function Dashboard() {
                 <LocationAndDetails />
                 <FillerAndOperation /> */}
               </div>
-              {/* <div className="flex justify-between my-4">
+              <div className="flex justify-between my-4">
                 {currentStep.id !== 1 ? (
                   <Button name="Retornar" onClick={handleReturnStep} />
                 ) : (
@@ -316,7 +302,7 @@ export default function Dashboard() {
                   name={lastStep ? 'Finalizar' : 'Prosseguir'}
                   onClick={lastStep ? handleFinish : handleNextStep}
                 />
-              </div> */}
+              </div>
               {/* /End replace */}
             </div>
           </div>
